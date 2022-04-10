@@ -1,23 +1,21 @@
-# dotfiles
-dotarile backup
+# 目的
+主要なdotfileをgitで管理するようにする
 
-### backup コマンド
-mv ~/.bashrc backup
-ln -s ~/backup/.zshrc ~
+# directory
+~/dotfiles
 
-管理したいファイルをbackupディレクトリに移動
+# 管理方法
+管理したいファイルを`~/dotfiles`下に移動させる
+本来ファイルがあった場所にはシンボリックリンクを貼る
+
+具体的なコマンド例
 ```
-% mv [ファイル名] ~/backup/[保存先]
-
-# 例:
-% mv ~/.bashrc backup
-```
-
-移動させたファイルにシンボリックリンクを貼る
-```
-% ln -s ~/backup//[保存先] [元々あった場所]
-
-# 例:
-ln -s ~/backup/.zshrc ~
+$ mv ~/.vimrc ~/dotfiles/
+$ ln -s ~/dotfiles/.vimrc ~/.vimrc
 ```
 
+# 可能なら可能なら行うこと
+dotfilesにはinstall.shなどの名前で、  
+シンボリックリンク作成やパッケージインストールのコマンドをまとめたシェルスクリプトを  
+用意しておくことが多いらしい。  
+dotfilesをgit cloneしてinstall.shを実行するだけで環境設定が終わればpcが変わっても便利
