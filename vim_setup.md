@@ -5,28 +5,16 @@ install: Homebrew
 plugin-manager: dein.vim  
 color-scheme: hybrid  
 
-## Plugin
-// 定義元へ飛ぶ  
-ctags(未完成)  
-
 #### ruby/rails
 rubocop  
-refe2  
-// 自動コード補完  
-RSense  
+solargraph
 
 ### vimのインストール
 % brew install vim  
 % export PATH="/usr/local/bin:$PATH"
 
-
 ### rubyのGem導入
-% gem install rsense  
 % gem install rubocop  
-% gem install  refe2
-
-### リファレンス事前準備
-% bitclust setup
 
 ### dein.vimの導入
 % mkdir ~/.vim/dein  
@@ -73,38 +61,11 @@ syntax enable
 
 % vim ~/.vimrc
 
-
-### rubocopとrefe2の導入
-% gem install rubocop refe2
-
-// rubocopとrefe2が表示されればOK  
-% gem list | grep -e rubocop -e refe2
-
-// リファレンスの構築  
-% bitclust setup
-
-
 ### ctagsの導入（不完全のため、要確認）
 % brew install ctags  
 % alias ctags="`brew --prefix`/bin/ctags"  
 // 確認  
 % ctags -R
-
-
-### Rsense(rsense/rsense)の導入
-% gem install rsense  
-% which rsense  
-// pathをコピーして.vimrcに下記を貼り付け  
-
-```
-call dein#add('Shougo/neocomplcache.vim')
-call dein#add('Shougo/neocomplcache-rsense.vim')
-```
-
-```
-let g:rsenseHome = expand("*Rsense InstallPath")
-let g:rsenseUseOmniFunc = 1
-```
 
 ## color-scheme(hybridを採用)
 hybridをinstall
@@ -121,3 +82,27 @@ hybridをinstall
 下記を追記
 > set background=dark
 > colorscheme hybrid
+
+##  fzf(曖昧検索)の導入
+```
+% brew install fzf
+% brew install ripgrep
+```
+
+// zshrcに追記
+# Settings for fzf
+export PATH="$PATH:$HOME/.fzf/bin"
+export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
+export FZF_DEFAULT_OPTS='--height 30% --border'
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+## Language Serverの導入
+入力補完と適宜元ジャンプ
+* coc.nvimを導入
+前提として、Node.jsが必要
+今回はrubyを補完して欲しいので、solargraphを使う
+```
+:CocInstall coc-solargraph
+```
+を実行することで使用可能になる
+install先は`/.config/coc/extensions/`になる

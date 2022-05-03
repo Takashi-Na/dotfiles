@@ -67,28 +67,6 @@ if dein#load_state(s:dein_dir)
   call dein#load_toml(s:toml)
   call dein#load_toml(s:toml_lazy, {'lazy': 1})
 
-
-	" plugin========================================================
-	call dein#add('Shougo/neocomplcache.vim')
-
-	" ruby-----------------------------------------------------------
-	" rsenseの導入
-	call dein#add('Shougo/neocomplcache-rsense.vim')
-	" config
-	if !exists('g:neocomplcache_omni_patterns')
-  	let g:neocomplcache_omni_patterns = {}
-	endif
-	let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
-	autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
-	"rsense_path
-	let g:rsenseHome = expand('/Users/naoki/.rbenv/shims/rsense')
-	let g:rsenseUseOmniFunc = 1
-
-	" rubocopの導入
-	call dein#add('w0rp/ale')
-	let g:ale_fixers = {
-	\   'ruby': ['rubocop'],
-	\}
   call dein#end()
   call dein#save_state()
 endif

@@ -3,7 +3,7 @@
 repo = 'scrooloose/nerdtree'
 hook_add = '''
   let NERDTreeShowHidden=1
-    nnoremap <silent><C-e> :NERDTreeFind<CR>:vertical res 30<CR>
+	nnoremap <silent><C-e> :NERDTreeFind<CR>:vertical res 30<CR>
 '''
 
 # git show diff
@@ -54,6 +54,64 @@ hook_add = '''
 '''
 
 # アイコン表示
-[[plugins]]
-repo = 'ryanoasis/vim-devicons'
+# [[plugins]]
+# repo = 'ryanoasis/vim-devicons'
 
+# fzf(曖昧検索)
+# gitでtrackingしていない場合は:Filesを使って検索すること
+[[plugins]]
+repo = 'junegunn/fzf'
+hook_post_update = './install --all'
+merged = 0
+# fzf.vim
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+depends = 'fzf'
+hook_add = '''
+	command! -bang -nargs=* Rg
+	\ call fzf#vim#grep(
+	\ 'rg --column --line-number --hidden --ignore-case --no-heading --color=always '.shellescape(<q-args>), 1,
+	\ <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'up:60%')
+	\ : fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'right:50%:hidden', '?'),
+	\ <bang>0)
+	nnoremap <C-f> :Rg<Space>
+	nnoremap <C-p> :GFiles<CR>
+	nnoremap <C-h> :History<CR>
+'''
+
+# 定義元ジャンプ
+# 補完機能
+[[plugins]]
+repo = 'neoclide/coc.nvim'
+rev = 'release'
+build = '''
+  git checkout release
+'''
+hook_add = '''
+  inoremap <silent><expr> <TAB>
+		\ pumvisible() ? "\<C-n>" :
+		\ <SID>check_back_space() ? "\<TAB>" :
+		\ coc#refresh()
+  inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+  inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+  function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~# '\s'
+  endfunction
+  nmap <silent> gd <Plug>(coc-definition)
+  nmap <silent> gy <Plug>(coc-type-definition)
+  nmap <silent> gi <Plug>(coc-implementation)
+  nmap <silent> gr <Plug>(coc-references)
+'''
+
+# 非同期コードチェック
+[[plugins]]
+repo = 'dense-analysis/ale'
+hook_add = '''
+	let g:ale_disable_lsp = 1
+	let g:ale_lint_on_text_changed = 1
+'''
+
+# end補完
+[[plugins]]
+repo = 'tpope/vim-endwise'
