@@ -20,6 +20,7 @@ hook_add = '''
 '''
 
 # 簡易コメントアウト
+# normal:gcc view:gc
 [[plugins]]
 repo = 'tomtom/tcomment_vim'
 hook_add = '''
@@ -81,6 +82,7 @@ hook_add = '''
 
 # 定義元ジャンプ
 # 補完機能
+# gdでジャンプ <C-o>で戻る
 [[plugins]]
 repo = 'neoclide/coc.nvim'
 rev = 'release'
