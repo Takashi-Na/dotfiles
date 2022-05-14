@@ -37,6 +37,9 @@ imap <C-n> <Down>
 imap <C-b> <Left>
 imap <C-f> <Right>
 
+" 対応するendへのジャンプ
+source $VIMRUNTIME/macros/matchit.vim 
+
 "dein Scripts-----------------------------
 if &compatible
   set nocompatible               " Be iMproved
