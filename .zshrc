@@ -1,5 +1,5 @@
 eval "$(rbenv init -)"
-export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 
 # 環境変数
 export LANG=ja_JP.UTF-8
