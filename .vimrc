@@ -18,6 +18,8 @@ set noswapfile
 set title
 " 検索文字ハイライト
 set hlsearch
+" ハイライトを削除
+nnoremap <F3> :noh<CR>
 " xで消した時はyankに残さない
 vnoremap x "_x
 nnoremap x "_x
@@ -38,7 +40,7 @@ imap <C-b> <Left>
 imap <C-f> <Right>
 
 " 対応するendへのジャンプ
-source $VIMRUNTIME/macros/matchit.vim 
+source $VIMRUNTIME/macros/matchit.vim
 
 "dein Scripts-----------------------------
 if &compatible
