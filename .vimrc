@@ -30,8 +30,8 @@ inoremap [<Enter> []<Left><CR><ESC><S-o>
 inoremap (<Enter> ()<Left><CR><ESC><S-o>
 
 " クオーテーションの補完
-inoremap ' ''<LEFT>
-inoremap " ""<LEFT>
+" inoremap ' ''<LEFT>
+" inoremap " ""<LEFT>
 
 " insertモードでemacsのキーバインドを使えるようにする
 imap <C-p> <Up>

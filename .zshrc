@@ -1,5 +1,6 @@
 export PATH="$HOME/.anyenv/bin:$PATH"
 eval "$(anyenv init -)"
+eval "$(rbenv init -)"
 
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 
@@ -44,7 +45,7 @@ setopt hist_ignore_dups
 setopt hist_ignore_all_dups
 
 # 同時に起動したzshの間でヒストリを共有
-setopt share_history
+# setopt share_history
 
 # 補完機能を有効にする
 autoload -Uz compinit
