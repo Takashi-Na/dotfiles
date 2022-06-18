@@ -1,6 +1,10 @@
 set encoding=utf-8
 set backspace=indent,eol,start
-" tabのスペースの数
+" tab spaceを表示
+set list
+set listchars=tab:>-,eol:$
+" tabをspaceにする
+set expandtab
 set tabstop=2
 set shiftwidth=2
 " 行数表示
