@@ -110,10 +110,23 @@ hook_add = '''
 [[plugins]]
 repo = 'dense-analysis/ale'
 hook_add = '''
-	let g:ale_disable_lsp = 1
-	let g:ale_lint_on_text_changed = 1
+  let g:ale_disable_lsp = 1
+  let g:ale_lint_on_text_changed = 1
 '''
 
 # end補完
 [[plugins]]
 repo = 'tpope/vim-endwise'
+
+# jsの記述ルール
+[[plugins]]
+repo = 'prettier/vim-prettier'
+build = 'npm install'
+# hook_add = '''
+#   let g:prettier#config#single_quote = 'true'
+#   let g:prettier#config#trailing_comma = 'all'
+# '''
+
+# editorの設定を管理
+[[plugins]]
+repo = 'editorconfig/editorconfig-vim'
