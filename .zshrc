@@ -39,8 +39,12 @@ export DB_BASE_PATH='~/tmp'
 export LMS_DB_USER='root'
 export LMS_DB_PASS='pass'
 export LMS_DB_HOST='127.0.0.1'
-# export LMS_DB_HOST='localhost'
 
+# RAILS_ENV
+export RAILS_ENV='development'
+
+# remote_asisst
+export COCOA_DB_HOST='127.0.0.1'
 
 ##############################
 # zsh config
