@@ -1,10 +1,25 @@
+##############################
+# path
+##############################
+
+# anyenv
 export PATH="$HOME/.anyenv/bin:$PATH"
 eval "$(anyenv init -)"
-eval "$(rbenv init -)"
 
+# rbenv
+# eval "$(rbenv init -)"
+
+# npm
+export PATH="$HOME/.anyenv/envs/nodenv/shims/npm:$PATH"
+
+export NODE_PATH=/usr/local/lib/node_modules
+
+# mysql
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 
-# 環境変数
+# pathの重複をsource zshrc時に削除
+typeset -U PATH
+
 # # basic認証
 export BASIC_AUTH_USER='admin'
 export BASIC_AUTH_PASSWORD='3333'
