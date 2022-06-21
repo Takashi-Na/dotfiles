@@ -1,7 +1,6 @@
 ##############################
 # path
 ##############################
-
 # anyenv
 export PATH="$HOME/.anyenv/bin:$PATH"
 eval "$(anyenv init -)"
@@ -10,9 +9,9 @@ eval "$(anyenv init -)"
 # eval "$(rbenv init -)"
 
 # npm
-export PATH="$HOME/.anyenv/envs/nodenv/shims/npm:$PATH"
+# export PATH="$HOME/.anyenv/envs/nodenv/shims/npm:$PATH"
 
-export NODE_PATH=/usr/local/lib/node_modules
+# export NODE_PATH=/usr/local/lib/node_modules
 
 # mysql
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
@@ -29,9 +28,18 @@ export PAYJP_SECRET_KEY='sk_test_785e9814c7a62311027b0c18'
 export PAYJP_PUBLIC_KEY='pk_test_1a53bbbec9523a108e9518d6'
 
 ##############################
+# alias
+##############################
+alias zshrc="vi ~/.zshrc"
+
+#projects
+alias remote_asisst="cd ~/SOBA/projects/remote_assist"
+alias spot="cd ~/SOBA/projects/spot"
+alias mieruka_cloud="cd ~/SOBA/projects/mieruka_cloud"
+
+##############################
 # SOBA
 ##############################
-
 # docker_databaseの保存先
 export DB_BASE_PATH='~/tmp'
 
@@ -49,7 +57,6 @@ export COCOA_DB_HOST='127.0.0.1'
 ##############################
 # zsh config
 ##############################
-
 export LANG=ja_JP.UTF-8
 
 # ヒストリの設定
