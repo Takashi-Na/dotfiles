@@ -32,10 +32,11 @@ export PAYJP_PUBLIC_KEY='pk_test_1a53bbbec9523a108e9518d6'
 ##############################
 alias zshrc="vi ~/.zshrc"
 
-#projects
+# projects
 alias remote_asisst="cd ~/SOBA/projects/remote_assist"
 alias spot="cd ~/SOBA/projects/spot"
 alias mieruka_cloud="cd ~/SOBA/projects/mieruka_cloud"
+alias broadtalk="cd ~/SOBA/projects/broadtalk"
 
 ##############################
 # SOBA
@@ -47,9 +48,6 @@ export DB_BASE_PATH='~/tmp'
 export LMS_DB_USER='root'
 export LMS_DB_PASS='pass'
 export LMS_DB_HOST='127.0.0.1'
-
-# RAILS_ENV
-export RAILS_ENV='development'
 
 # remote_asisst
 export COCOA_DB_HOST='127.0.0.1'
