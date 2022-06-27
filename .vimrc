@@ -33,10 +33,6 @@ inoremap {<Enter> {}<Left><CR><ESC><S-o>
 inoremap [<Enter> []<Left><CR><ESC><S-o>
 inoremap (<Enter> ()<Left><CR><ESC><S-o>
 
-" クオーテーションの補完
-" inoremap ' ''<LEFT>
-" inoremap " ""<LEFT>
-
 " insertモードでemacsのキーバインドを使えるようにする
 imap <C-p> <Up>
 imap <C-n> <Down>
@@ -45,6 +41,13 @@ imap <C-f> <Right>
 
 " 対応するendへのジャンプ
 source $VIMRUNTIME/macros/matchit.vim
+
+" , キーで次タブのバッファを表示
+nnoremap <silent> , :bprev<CR>
+" . キーで前タブのバッファを表示
+nnoremap <silent> . :bnext<CR>
+" bdで現在のバッファを削除
+nnoremap bd :bd<CR>
 
 "dein Scripts-----------------------------
 if &compatible
