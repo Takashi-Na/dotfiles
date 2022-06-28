@@ -14,9 +14,6 @@ setopt hist_ignore_dups
 # 同じコマンドをヒストリに残さない
 setopt hist_ignore_all_dups
 
-# 同時に起動したzshの間でヒストリを共有
-# setopt share_history
-
 # 補完機能を有効にする
 autoload -Uz compinit
 compinit -u
@@ -48,17 +45,21 @@ export FZF_DEFAULT_OPTS='--height 30% --border'
 # path
 ##############################
 # anyenv
+# todo:なぜか2回記述しないと読み込んでくれない
+export PATH="$HOME/.anyenv/bin:$PATH"
+eval "$(anyenv init -)"
 export PATH="$HOME/.anyenv/bin:$PATH"
 eval "$(anyenv init -)"
 
-export PATH="$HOME/.anyenv/bin:$PATH"
-eval "$(anyenv init -)"
 # mysql
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 
 # pathの重複をsource zshrc時に削除
 typeset -U PATH
 
+##############################
+# env
+##############################
 # # basic認証
 export BASIC_AUTH_USER='admin'
 export BASIC_AUTH_PASSWORD='3333'
@@ -72,6 +73,10 @@ export PAYJP_PUBLIC_KEY='pk_test_1a53bbbec9523a108e9518d6'
 ##############################
 alias zshrc="vi ~/.zshrc"
 alias source_zshrc="source ~/.zshrc"
+alias ssh_config="vi ~/.ssh/config"
+alias vimrc="vi ~/.vimrc"
+alias dein.toml="vi ~/.dein/dein.toml"
+alias dein-lazy.toml="vi ~/.dein/dein-lazy.toml"
 
 # projects
 alias remote_asisst="cd ~/SOBA/projects/remote_assist"
@@ -79,6 +84,7 @@ alias spot="cd ~/SOBA/projects/spot"
 alias mieruka_cloud="cd ~/SOBA/projects/mieruka_cloud"
 alias broadtalk="cd ~/SOBA/projects/broadtalk"
 alias yashima="cd ~/SOBA/projects/yashima"
+alias knowledge.wiki="cd ~/SOBA/projects/knowledge.wiki"
 alias docker_database="cd ~/SOBA/projects/docker_database"
 
 ##############################
@@ -92,6 +98,7 @@ export LMS_DB_USER='root'
 export LMS_DB_PASS='pass'
 export LMS_DB_HOST='127.0.0.1'
 export LMS_LATTE_HOST='local-latte.soba-project.com'
+
 # remote_asisst
 export COCOA_DB_HOST='127.0.0.1'
 
