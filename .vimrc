@@ -28,11 +28,6 @@ nnoremap <F3> :noh<CR>
 vnoremap x "_x
 nnoremap x "_x
 
-" 括弧の補完
-inoremap {<Enter> {}<Left><CR><ESC><S-o>
-inoremap [<Enter> []<Left><CR><ESC><S-o>
-inoremap (<Enter> ()<Left><CR><ESC><S-o>
-
 " insertモードでemacsのキーバインドを使えるようにする
 imap <C-p> <Up>
 imap <C-n> <Down>
