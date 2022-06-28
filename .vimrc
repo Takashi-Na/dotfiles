@@ -2,7 +2,7 @@ set encoding=utf-8
 set backspace=indent,eol,start
 " tab spaceを表示
 set list
-set listchars=tab:>-,eol:$
+set listchars=tab:>-,eol:↲
 " tabをspaceにする
 set expandtab
 set tabstop=2
